@@ -16,7 +16,7 @@ public class MyChain {
     data.add("Hey im the third block");
     List<Block> blockChain = new ArrayList<>();
     for (int i = 0; i < data.size(); i++) {
-      String prevHash = i == 0 ? FIRST_HASH : blockChain.get(i - 1).hash;
+      String prevHash = i == 0 ? FIRST_HASH : blockChain.get(i - 1).getHash();
       blockChain.add(new Block(data.get(i), prevHash));
     }
 

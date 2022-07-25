@@ -6,8 +6,8 @@ import java.util.Date;
 
 public class Block {
 
-  public String hash;
-  public String previousHash;
+  private final String hash;
+  private final String previousHash;
   private final String data; // data will be a simple message.
   private final long timeStamp; //as number of milliseconds since 1/1/1970.
 
@@ -23,4 +23,11 @@ public class Block {
     return StringUtil.applySha256(data + previousHash + timeStamp);
   }
 
+  public String getHash() {
+    return hash;
+  }
+
+  public String getPreviousHash() {
+    return previousHash;
+  }
 }
